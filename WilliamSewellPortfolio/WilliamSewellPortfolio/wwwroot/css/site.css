@@ -295,3 +295,28 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Add the full-span class for the Game of Life box */
+.full-span-box {
+    Grid-Column: 1 / -1; /* Make it span all columns */
+}
+
+/* Ensure the canvas within the box takes up a reasonable space */
+#gameOfLife {
+    Width: 100%;
+    Height: auto;
+    Display: Block;
+    Margin-Top: 20px;
+    Background-Color: Black; /* Ensures the background of the canvas is dark */
+}
+
+/* Reverting box background to the original look, since it's not transparent over the whole screen */
+.experience-box {
+    Background: Linear-Gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    Border: 1px Solid #333;
+    Border-Radius: 8px;
+    Padding: 40px 30px;
+    Transition: All 0.3s Ease;
+    Box-Shadow: 0 4px 20px Rgba(255, 255, 255, 0.05);
+    Backdrop-Filter: None; /* Removing blur as it's no longer over the background */
+}

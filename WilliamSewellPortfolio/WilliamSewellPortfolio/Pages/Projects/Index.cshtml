@@ -10,9 +10,8 @@
         <p class="hero-subtitle">A showcase of what I’ve built</p>
     </div>
 
-    <div class="experience-grid">
+    <div class="experience-grid">      
 
-        <!-- Project 1 -->
         <div class="experience-box">
             <div class="box-content">
                 <h2>JensenGolem.com</h2>
@@ -33,6 +32,39 @@
                 <a href="https://www.jensengolem.com" target="_blank" class="contact-link">
                     Visit Project →
                 </a>
+            </div>
+        </div>
+
+        <div class="experience-box full-span-box">
+            <div class="box-content">
+                <h2>Conway's Game of Life</h2>
+                <p>
+                    An interactive demonstration of John Horton Conway's cellular automaton,
+                    implemented in JavaScript and HTML5 Canvas. Click cells to toggle them on/off, then click Start to watch the patterns evolve!
+                </p>
+                <div style="background: #0a0a0a; border: 1px solid #222; border-radius: 6px; padding: 20px; margin: 20px 0;">
+                    <h3 style="font-size: 1.2rem; font-weight: 300; margin-bottom: 15px; color: #fff;">The Rules</h3>
+                    <ul style="list-style: none; padding: 0; margin: 0; color: #ccc; line-height: 1.8;">
+                        <li style="padding: 8px 0; border-bottom: 1px solid #1a1a1a;">
+                            <strong style="color: #fff;">Underpopulation:</strong> Any live cell with fewer than 2 neighbors dies
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #1a1a1a;">
+                            <strong style="color: #fff;">Survival:</strong> Any live cell with 2 or 3 neighbors lives on
+                        </li>
+                        <li style="padding: 8px 0; border-bottom: 1px solid #1a1a1a;">
+                            <strong style="color: #fff;">Overpopulation:</strong> Any live cell with more than 3 neighbors dies
+                        </li>
+                        <li style="padding: 8px 0;">
+                            <strong style="color: #fff;">Reproduction:</strong> Any dead cell with exactly 3 neighbors becomes alive
+                        </li>
+                    </ul>
+                </div>
+                <div style="display: flex; gap: 10px; margin-bottom: 20px; justify-content: center;">
+                    <button id="golStartBtn" class="decrypt-button">Start</button>
+                    <button id="golClearBtn" class="decrypt-button">Clear</button>
+                    <button id="golRandomBtn" class="decrypt-button">Random</button>
+                </div>
+                <canvas id="gameOfLife" width="900" height="300"></canvas>
             </div>
         </div>
 
