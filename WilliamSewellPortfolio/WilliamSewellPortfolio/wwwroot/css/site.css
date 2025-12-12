@@ -72,7 +72,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 500px; /* Increased slightly for visual balance */
+    min-height: 500px;
     flex-grow: 1;
 }
 
@@ -84,7 +84,7 @@ body {
     padding: 60px 80px;
     box-shadow: 0 0 60px rgba(255, 255, 255, 0.1), 0 0 100px rgba(255, 255, 255, 0.05), inset 0 0 40px rgba(255, 255, 255, 0.05);
     z-index: 1;
-    overflow: visible; /* Critical for canvas visibility */
+    overflow: visible;
     max-width: 800px;
     width: 100%;
 }
@@ -191,6 +191,44 @@ body {
             border-bottom: none;
         }
 
+/* Expandable skill styles */
+.expandable-skill {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 12px 0 !important;
+}
+
+    .expandable-skill:hover {
+        color: #fff !important;
+    }
+
+.skill-title {
+    display: block;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.skill-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, margin-top 0.4s ease, opacity 0.4s ease;
+    color: #888;
+    font-size: 0.88rem;
+    line-height: 1.6;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.expandable-skill:hover .skill-details {
+    max-height: 200px;
+    margin-top: 10px;
+    opacity: 1;
+}
+
+.expandable-skill:hover .skill-title {
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .hero-title {
         font-size: 2.5rem;
@@ -202,6 +240,13 @@ body {
 
     .experience-box {
         padding: 30px 25px;
+    }
+
+    /* Make skills tap-expandable on mobile */
+    .expandable-skill.expanded .skill-details {
+        max-height: 200px;
+        margin-top: 10px;
+        opacity: 1;
     }
 }
 
@@ -344,69 +389,27 @@ body {
     }
 }
 
-/* Add the full-span class for the Game of Life box */
 .full-span-box {
-    Grid-Column: 1 / -1; /* Make it span all columns */
+    grid-column: 1 / -1;
 }
 
-/* Ensure the canvas within the box takes up a reasonable space */
 #gameOfLife {
-    Width: 100%;
-    Height: auto;
-    Display: Block;
-    Margin-Top: 20px;
-    Background-Color: Black; /* Ensures the background of the canvas is dark */
-}
-
-/* Reverting box background to the original look, since it's not transparent over the whole screen */
-.experience-box {
-    Background: Linear-Gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-    Border: 1px Solid #333;
-    Border-Radius: 8px;
-    Padding: 40px 30px;
-    Transition: All 0.3s Ease;
-    Box-Shadow: 0 4px 20px Rgba(255, 255, 255, 0.05);
-    Backdrop-Filter: None; /* Removing blur as it's no longer over the background */
-}
-
-.experience-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    margin-top: 40px;
-}
-
-@media (max-width: 1200px) {
-    .experience-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.5rem;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-box {
-        padding: 30px 25px;
-    }
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+    background-color: black;
 }
 
 .cv-download-link {
     display: inline-block;
     background: #1a1a1a;
     color: #fff;
-    text-decoration: none;
-    border: 1px solid #555;
     padding: 12px 30px;
     border-radius: 4px;
+    text-decoration: none;
+    border: 1px solid #555;
     transition: all 0.3s ease;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
     margin-top: 10px;
 }
 
@@ -414,7 +417,4 @@ body {
         background: #2a2a2a;
         border-color: #777;
         color: #fff;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
     }
-
