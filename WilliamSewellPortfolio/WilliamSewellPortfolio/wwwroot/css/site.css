@@ -63,11 +63,41 @@ body {
     text-align: start;
 }
 
-/* Portfolio styles */
+/* Enhanced Hero Section CSS */
 .hero-section {
+    position: relative;
     text-align: center;
     padding: 100px 20px 60px;
     background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px; /* Increased slightly for visual balance */
+    flex-grow: 1;
+}
+
+.hero-box {
+    position: relative;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border: 2px solid #333;
+    border-radius: 20px;
+    padding: 60px 80px;
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.1), 0 0 100px rgba(255, 255, 255, 0.05), inset 0 0 40px rgba(255, 255, 255, 0.05);
+    z-index: 1;
+    overflow: visible; /* Critical for canvas visibility */
+    max-width: 800px;
+    width: 100%;
+}
+
+.hero-canvas {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
+    pointer-events: none;
+    z-index: 10;
+    border-radius: 20px;
 }
 
 .hero-title {
@@ -76,6 +106,8 @@ body {
     letter-spacing: 2px;
     margin-bottom: 10px;
     color: #fff;
+    position: relative;
+    z-index: 5;
 }
 
 .hero-subtitle {
@@ -83,6 +115,22 @@ body {
     color: #999;
     font-weight: 300;
     letter-spacing: 1px;
+    position: relative;
+    z-index: 5;
+}
+
+@media (max-width: 768px) {
+    .hero-box {
+        padding: 40px 30px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
 }
 
 .content-wrapper {
