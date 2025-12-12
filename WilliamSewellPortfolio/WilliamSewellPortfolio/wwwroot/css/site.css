@@ -368,3 +368,53 @@ body {
     Box-Shadow: 0 4px 20px Rgba(255, 255, 255, 0.05);
     Backdrop-Filter: None; /* Removing blur as it's no longer over the background */
 }
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+@media (max-width: 1200px) {
+    .experience-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-box {
+        padding: 30px 25px;
+    }
+}
+
+.cv-download-link {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #555;
+    padding: 12px 30px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    margin-top: 10px;
+}
+
+    .cv-download-link:hover {
+        background: #2a2a2a;
+        border-color: #777;
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    }
+
